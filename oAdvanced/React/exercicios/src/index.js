@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import First from "./components/First";
+import Saudacao from "./components/Saudacao";
 
-ReactDOM.render(<First />, document.getElementById("root"));
+ReactDOM.render(
+  <div>
+    <Saudacao tipo="Bom dia" nome="João" />
+  </div>,
+  document.getElementById("root")
+);
