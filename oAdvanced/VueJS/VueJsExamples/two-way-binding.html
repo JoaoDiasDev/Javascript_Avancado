@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="myText">
+        Meter : <input type="text" v-model="mt">
+        Centimeter : <input type="text" v-model="cm">
+
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data : {
+               myText:'',
+               mt : 0,
+               cm : 0
+            },
+
+            watch :{
+                myText(newValue,oldValue){
+                    console.log("new",newValue)
+                    console.log("old",oldValue)
+                },
+
+                mt(value){
+                    this.cm = value * 100
+                },
+                cm(value){
+
+                    this.mt = value / 100
+                }
+            }
+           
+
+        });
+
+
+    </script>
+</body>
+</html>

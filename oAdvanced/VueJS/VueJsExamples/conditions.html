@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="display">First Text</p>
+        <p v-else="">Second Text</p>
+        <button @click="display = !display">Change</button>
+
+        <p v-if="number < 10">Number is less than 10</p>
+        <p v-else-if="number > 10">Number is greater than 10</p>
+        <p v-else>Number is equals than 10</p>
+        <p v-show="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas consequuntur
+            mollitia tempora nam quo fuga odit totam,
+            veniam asperiores quasi, voluptatibus ratione. Enim expedita quidem odio, magni quam culpa perspiciatis?</p>
+        <button @click="lorem = ! lorem">My Lorem</button>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+
+                display: false,
+                number: 11,
+                lorem: false,
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>
